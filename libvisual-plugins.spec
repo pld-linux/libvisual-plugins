@@ -94,17 +94,17 @@ actor-lv_analyzer plugin for libvisual.
 %description -n libvisual-plugin-actor-lv_analyzer -l pl
 Wtyczka actor-lv_analyzer dla libvisual.
 
-%package -n libvisual-plugin-actor-lv_dna 
-Summary: actor-lv_dna plugin for libvisual 
-Summary(pl): Wtyczka actor-lv_dna dla libvisual
-Group: Libraries 
-Requires: %{name} = %{version}-%{release}
+#%package -n libvisual-plugin-actor-lv_dna 
+#Summary: actor-lv_dna plugin for libvisual 
+#Summary(pl): Wtyczka actor-lv_dna dla libvisual
+#Group: Libraries 
+#Requires: %{name} = %{version}-%{release}
 
-%description -n libvisual-plugin-actor-lv_dna
-actor-lv_dna plugin for libvisual.
+#%description -n libvisual-plugin-actor-lv_dna
+#actor-lv_dna plugin for libvisual.
 
-%description -n libvisual-plugin-actor-lv_dna -l pl 
-Wtyczka actor-lv_dna dla libvisual.
+#%description -n libvisual-plugin-actor-lv_dna -l pl 
+#Wtyczka actor-lv_dna dla libvisual.
 
 %package -n libvisual-plugin-actor-lv_gltest
 Summary:	actor-lv_gltest plugin for libvisual
@@ -317,9 +317,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libvisual/actor/actor_lv_analyzer.so
 
-%files -n libvisual-plugin-actor-lv_dna
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libvisual/actor/actor_lv_dna.so
+#%files -n libvisual-plugin-actor-lv_dna
+#%defattr(644,root,root,755)
+#%attr(755,root,root) %{_libdir}/libvisual/actor/actor_lv_dna.so
 
 %files -n libvisual-plugin-actor-lv_gltest
 %defattr(644,root,root,755)
