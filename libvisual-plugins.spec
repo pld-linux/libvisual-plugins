@@ -9,7 +9,7 @@ Group:		Libraries
 Source0:	%{name}-%{bver}.tar.bz2
 # Source0-md5:	ba2316ca18f74a97fed5ddb65984a4d0
 URL:		http://libvisual.sourceforge.net/
-Buildrequires:	SDL-devel >= 1.2.0
+BuildRequires:	SDL-devel >= 1.2.0
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
@@ -380,7 +380,10 @@ rm -rf $RPM_BUILD_ROOT
 All persons listed below can be reached at <cvs_login>@pld-linux.org
 
 $Log: libvisual-plugins.spec,v $
-Revision 1.6  2004-12-01 19:34:28  qboosh
+Revision 1.7  2004-12-25 17:40:50  qboosh
+- unified
+
+Revision 1.6  2004/12/01 19:34:28  qboosh
 - killed bogus descs and post/postun, fixed internal deps
 
 Revision 1.5  2004/11/30 21:42:21  havner
