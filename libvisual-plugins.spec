@@ -5,7 +5,7 @@ Version:	0.2.0
 %define	bver	20041130
 Release:	0.%{bver}.1
 License:	GPL
-Group:			Libraries
+Group:		Libraries
 Source0:	%{name}-%{bver}.tar.bz2
 # Source0-md5:	ba2316ca18f74a97fed5ddb65984a4d0
 URL:		http://libvisual.sourceforge.net/
@@ -385,15 +385,18 @@ rm -rf $RPM_BUILD_ROOT
 All persons listed below can be reached at <cvs_login>@pld-linux.org
 
 $Log: libvisual-plugins.spec,v $
-Revision 1.4  2004-11-30 21:40:57  havner
+Revision 1.5  2004-11-30 21:42:21  havner
+- a little bit too far
+
+Revision 1.4  2004/11/30 21:40:57  havner
 - spaces -> tabs
 
-Revision 1.3	2004/11/30 21:35:41	havner
+Revision 1.3  2004/11/30 21:35:41  havner
 - cosmetics
 
-Revision 1.2	2004/11/30 21:33:56	havner
+Revision 1.2  2004/11/30 21:33:56  havner
 - cleanups/cosmetics
 - missing dirs
 
-Revision 1.1	2004/11/30 21:15:38	averne
+Revision 1.1  2004/11/30 21:15:38  averne
 - initial release
