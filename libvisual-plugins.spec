@@ -2,19 +2,19 @@ Summary:	libvisual plugins
 Summary(pl):	Wtyczki dla libvisual
 Name:		libvisual-plugins
 Version:	0.2.0
-%define	bver	20041130
-Release:	0.%{bver}.1
+%define	snap	20050117
+Release:	0.%{snap}.1
 License:	GPL
 Group:		Libraries
-Source0:	%{name}-%{bver}.tar.bz2
-# Source0-md5:	ba2316ca18f74a97fed5ddb65984a4d0
+Source0:	%{name}-%{version}.%{snap}.tar.gz
+# Source0-md5:	ded2f9a76ce54b1213e5a82dfe116c9a
 URL:		http://libvisual.sourceforge.net/
 BuildRequires:	SDL-devel >= 1.2.0
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.14
-BuildRoot:	%{tmpdir}/%{name}-%{bver}-root-%(id -u -n)
+BuildRoot:	%{tmpdir}/%{name}-%{snap}-root-%(id -u -n)
 
 %description
 libvisual plugins.
@@ -94,17 +94,17 @@ actor-lv_analyzer plugin for libvisual.
 %description -n libvisual-plugin-actor-lv_analyzer -l pl
 Wtyczka actor-lv_analyzer dla libvisual.
 
-%package -n libvisual-plugin-actor-lv_dna
-Summary:	actor-lv_dna plugin for libvisual
-Summary(pl):	Wtyczka actor-lv_dna dla libvisual
-Group:		Libraries
-Requires:	%{name} = %{version}-%{release}
+#%package -n libvisual-plugin-actor-lv_dna
+#Summary:	actor-lv_dna plugin for libvisual
+#Summary(pl):	Wtyczka actor-lv_dna dla libvisual
+#Group:		Libraries
+#Requires:	%{name} = %{version}-%{release}
 
-%description -n libvisual-plugin-actor-lv_dna
-actor-lv_dna plugin for libvisual.
+#%description -n libvisual-plugin-actor-lv_dna
+#actor-lv_dna plugin for libvisual.
 
-%description -n libvisual-plugin-actor-lv_dna -l pl
-Wtyczka actor-lv_dna dla libvisual.
+#%description -n libvisual-plugin-actor-lv_dna -l pl
+#Wtyczka actor-lv_dna dla libvisual.
 
 %package -n libvisual-plugin-actor-lv_gltest
 Summary:	actor-lv_gltest plugin for libvisual
@@ -263,7 +263,7 @@ morph-tentacle plugin for libvisual.
 Wtyczka morph-tentacle dla libvisual.
 
 %prep
-%setup -q -n %{name}-%{bver}
+%setup -q -n %{name}
 
 %build
 %{__libtoolize}
@@ -317,9 +317,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libvisual/actor/actor_lv_analyzer.so
 
-%files -n libvisual-plugin-actor-lv_dna
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libvisual/actor/actor_lv_dna.so
+#%files -n libvisual-plugin-actor-lv_dna
+#%defattr(644,root,root,755)
+#%attr(755,root,root) %{_libdir}/libvisual/actor/actor_lv_dna.so
 
 %files -n libvisual-plugin-actor-lv_gltest
 %defattr(644,root,root,755)
@@ -380,7 +380,12 @@ rm -rf $RPM_BUILD_ROOT
 All persons listed below can be reached at <cvs_login>@pld-linux.org
 
 $Log: libvisual-plugins.spec,v $
-Revision 1.7  2004-12-25 17:40:50  qboosh
+Revision 1.8  2005-01-17 09:40:13  paszczus
+- updated to 20050117 snap
+- changed bver to snap
+- commented out libvisual-plugin-actor-lv_dna (temporary i hope)
+
+Revision 1.7  2004/12/25 17:40:50  qboosh
 - unified
 
 Revision 1.6  2004/12/01 19:34:28  qboosh
