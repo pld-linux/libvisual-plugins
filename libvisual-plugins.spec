@@ -5,7 +5,7 @@ Version:	0.2.0
 %define	bver	20041130
 Release:	0.%{bver}.1
 License:	GPL
-Group:		Libraries
+Group:			Libraries
 Source0:	%{name}-%{bver}.tar.bz2
 # Source0-md5:	ba2316ca18f74a97fed5ddb65984a4d0
 URL:		http://libvisual.sourceforge.net/
@@ -25,9 +25,9 @@ libvisual-widgets to pakiet zawieraj±cy standardowe widgety interfejsu
 u¿ytkownika, które mog± byæ u¿ywane równie¿ przez libvisual.
 
 %package -n libvisual-plugin-actor-bumpscope
-Summary:        actor-bumpscope plugin for libvisual
-Summary(pl):    Wtyczka actor-bumpscope dla libvisual
-Group:          Libraries
+Summary:	actor-bumpscope plugin for libvisual
+Summary(pl):	Wtyczka actor-bumpscope dla libvisual
+Group:		Libraries
 Requires:	%{name}-%{version}
 
 %description -n libvisual-plugin-actor-bumpscope
@@ -37,9 +37,9 @@ actor-bumpscope plugin for libvisual.
 Wtyczka actor-bumpscope dla libvisual.
 
 %package -n libvisual-plugin-actor-gdkpixbuf
-Summary:        actor-gdkpixbuf plugin for libvisual
-Summary(pl):    Wtyczka actor-gdkpixbuf dla libvisual
-Group:          Libraries
+Summary:	actor-gdkpixbuf plugin for libvisual
+Summary(pl):	Wtyczka actor-gdkpixbuf dla libvisual
+Group:		Libraries
 Requires:	%{name}-%{version}
 
 %description -n libvisual-plugin-actor-gdkpixbuf
@@ -49,9 +49,9 @@ actor-gdkpixbuf plugin for libvisual.
 Wtyczka actor-gdkpixbuf dla libvisual.
 
 %package -n libvisual-plugin-actor-infinite
-Summary:        actor-infinite plugin for libvisual
-Summary(pl):    Wtyczka actor-infinite dla libvisual
-Group:          Libraries
+Summary:	actor-infinite plugin for libvisual
+Summary(pl):	Wtyczka actor-infinite dla libvisual
+Group:		Libraries
 Requires:	%{name}-%{version}
 
 %description -n libvisual-plugin-actor-infinite
@@ -61,9 +61,9 @@ actor-infinite plugin for libvisual.
 Wtyczka actor-infinite dla libvisual.
 
 %package -n libvisual-plugin-actor-jakdaw
-Summary:        actor-jakdaw plugin for libvisual
-Summary(pl):    Wtyczka actor-jakdaw dla libvisual
-Group:          Libraries
+Summary:	actor-jakdaw plugin for libvisual
+Summary(pl):	Wtyczka actor-jakdaw dla libvisual
+Group:		Libraries
 Requires:	%{name}-%{version}
 
 %description -n libvisual-plugin-actor-jakdaw
@@ -73,9 +73,9 @@ actor-jakdaw plugin for libvisual.
 Wtyczka actor-jakdaw dla libvisual.
 
 %package -n libvisual-plugin-actor-JESS
-Summary:        actor-JESS plugin for libvisual
-Summary(pl):    Wtyczka actor-JESS dla libvisual
-Group:          Libraries
+Summary:	actor-JESS plugin for libvisual
+Summary(pl):	Wtyczka actor-JESS dla libvisual
+Group:		Libraries
 Requires:	%{name}-%{version}
 
 %description -n libvisual-plugin-actor-JESS
@@ -85,9 +85,9 @@ actor-JESS plugin for libvisual.
 Wtyczka actor-JESS dla libvisual.
 
 %package -n libvisual-plugin-actor-lv_analyzer
-Summary:        actor-lv_analyzer plugin for libvisual
-Summary(pl):    Wtyczka actor-lv_analyzer dla libvisual
-Group:          Libraries
+Summary:	actor-lv_analyzer plugin for libvisual
+Summary(pl):	Wtyczka actor-lv_analyzer dla libvisual
+Group:		Libraries
 Requires:	%{name}-%{version}
 
 %description -n libvisual-plugin-actor-lv_analyzer
@@ -97,9 +97,9 @@ actor-lv_analyzer plugin for libvisual.
 Wtyczka actor-lv_analyzer dla libvisual.
 
 %package -n libvisual-plugin-actor-lv_dna
-Summary:        actor-lv_dna plugin for libvisual
-Summary(pl):    Wtyczka actor-lv_dna dla libvisual
-Group:          Libraries
+Summary:	actor-lv_dna plugin for libvisual
+Summary(pl):	Wtyczka actor-lv_dna dla libvisual
+Group:		Libraries
 Requires:	%{name}-%{version}
 
 %description -n libvisual-plugin-actor-lv_dna
@@ -109,9 +109,9 @@ actor-lv_dna plugin for libvisual.
 Wtyczka actor-lv_dna dla libvisual.
 
 %package -n libvisual-plugin-actor-lv_gltest
-Summary:        actor-lv_gltest plugin for libvisual
-Summary(pl):    Wtyczka actor-lv_gltest dla libvisual
-Group:          Libraries
+Summary:	actor-lv_gltest plugin for libvisual
+Summary(pl):	Wtyczka actor-lv_gltest dla libvisual
+Group:		Libraries
 Requires:	%{name}-%{version}
 
 %description -n libvisual-plugin-actor-lv_gltest
@@ -121,9 +121,9 @@ actor-lv_gltest plugin for libvisual.
 Wtyczka actor-lv_gltest dla libvisual.
 
 %package -n libvisual-plugin-actor-lv_scope
-Summary:        actor-lv_scope plugin for libvisual
-Summary(pl):    Wtyczka actor-lv_scope dla libvisual
-Group:          Libraries
+Summary:	actor-lv_scope plugin for libvisual
+Summary(pl):	Wtyczka actor-lv_scope dla libvisual
+Group:		Libraries
 Requires:	%{name}-%{version}
 
 %description -n libvisual-plugin-actor-lv_scope
@@ -133,9 +133,9 @@ actor-lv_scope plugin for libvisual.
 Wtyczka actor-lv_scope dla libvisual
 
 %package -n libvisual-plugin-actor-madspin
-Summary:        actor-madspin plugin for libvisual
-Summary(pl):    Wtyczka actor-madspin dla libvisual
-Group:          Libraries
+Summary:	actor-madspin plugin for libvisual
+Summary(pl):	Wtyczka actor-madspin dla libvisual
+Group:		Libraries
 Requires:	%{name}-%{version}
 
 %description -n libvisual-plugin-actor-madspin
@@ -145,9 +145,9 @@ actor-madspin plugin for libvisual.
 Wtyczka actor-madspin dla libvisual.
 
 %package -n libvisual-plugin-actor-oinksie
-Summary:        actor-oinksie plugin for libvisual
-Summary(pl):    Wtyczka actor-oinksie dla libvisual
-Group:          Libraries
+Summary:	actor-oinksie plugin for libvisual
+Summary(pl):	Wtyczka actor-oinksie dla libvisual
+Group:		Libraries
 Requires:	%{name}-%{version}
 
 %description -n libvisual-plugin-actor-oinksie
@@ -157,9 +157,9 @@ actor-oinksie plugin for libvisual.
 Wtyczka actor-oinksie dla libvisual.
 
 %package -n libvisual-plugin-actor-plazma
-Summary:        actor-plazma plugin for libvisual
-Summary(pl):    Wtyczka actor-plazma dla libvisual
-Group:          Libraries
+Summary:	actor-plazma plugin for libvisual
+Summary(pl):	Wtyczka actor-plazma dla libvisual
+Group:		Libraries
 Requires:	%{name}-%{version}
 
 %description -n libvisual-plugin-actor-plazma
@@ -171,7 +171,7 @@ Wtyczka actor-plazma dla libvisual.
 %package -n libvisual-plugin-input-alsa
 Summary:	Alsa plugin for libvisual
 Summary(pl):	Wtyczka alsy dla libvisual
-Group:          Libraries
+Group:		Libraries
 Requires:	%{name}-%{version}
 
 %description -n libvisual-plugin-input-alsa
@@ -183,7 +183,7 @@ Wtyczka alsy dla libvisual.
 %package -n libvisual-plugin-input-esd
 Summary:	ESD plugin for libvisual
 Summary(pl):	Wtyczka ESD dla libvisual
-Group:          Libraries
+Group:		Libraries
 Requires:	%{name}-%{version}
 
 %description -n libvisual-plugin-input-esd
@@ -195,7 +195,7 @@ Wtyczka ESD dla libvisual.
 %package -n libvisual-plugin-input-mplayer
 Summary:	Mplayer plugin for libvisual
 Summary(pl):	Wtyczka mplayera dla libvisual
-Group:          Libraries
+Group:		Libraries
 Requires:	%{name}-%{version}
 
 %description -n libvisual-plugin-input-mplayer
@@ -207,7 +207,7 @@ Wtyczka mplayera dla libvisual.
 %package -n libvisual-plugin-input-jack
 Summary:	jack plugin for libvisual
 Summary(pl):	Wtyczka jack dla libvisual
-Group:          Libraries
+Group:		Libraries
 Requires:	%{name}-%{version}
 
 %description -n libvisual-plugin-input-jack
@@ -219,7 +219,7 @@ Wtyczka jack dla libvisual.
 %package -n libvisual-plugin-morph-alphablend
 Summary:	morph-alphablend plugin for libvisual
 Summary(pl):	Wtyczka morph-alphablend dla libvisual
-Group:          Libraries
+Group:		Libraries
 Requires:	%{name}-%{version}
 
 %description -n libvisual-plugin-morph-alphablend
@@ -231,7 +231,7 @@ Wtyczka morph-alphablend dla libvisual.
 %package -n libvisual-plugin-morph-flash
 Summary:	morph-flash plugin for libvisual
 Summary(pl):	Wtyczka morph-flash dla libvisual
-Group:          Libraries
+Group:		Libraries
 Requires:	%{name}-%{version}
 
 %description -n libvisual-plugin-morph-flash
@@ -243,7 +243,7 @@ Wtyczka morph-flash dla libvisual.
 %package -n libvisual-plugin-morph-slide
 Summary:	morph-slide plugin for libvisual
 Summary(pl):	Wtyczka morph-slide dla libvisual
-Group:          Libraries
+Group:		Libraries
 Requires:	%{name}-%{version}
 
 %description -n libvisual-plugin-morph-slide
@@ -255,7 +255,7 @@ Wtyczka morph-slide dla libvisual.
 %package -n libvisual-plugin-morph-tentacle
 Summary:	morph-tentacle plugin for libvisual
 Summary(pl):	Wtyczka morph-tentacle dla libvisual
-Group:          Libraries
+Group:		Libraries
 Requires:	%{name}-%{version}
 
 %description -n libvisual-plugin-morph-tentacle
@@ -385,12 +385,15 @@ rm -rf $RPM_BUILD_ROOT
 All persons listed below can be reached at <cvs_login>@pld-linux.org
 
 $Log: libvisual-plugins.spec,v $
-Revision 1.3  2004-11-30 21:35:41  havner
+Revision 1.4  2004-11-30 21:40:57  havner
+- spaces -> tabs
+
+Revision 1.3	2004/11/30 21:35:41	havner
 - cosmetics
 
-Revision 1.2  2004/11/30 21:33:56  havner
+Revision 1.2	2004/11/30 21:33:56	havner
 - cleanups/cosmetics
 - missing dirs
 
-Revision 1.1  2004/11/30 21:15:38  averne
+Revision 1.1	2004/11/30 21:15:38	averne
 - initial release
