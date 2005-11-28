@@ -2,17 +2,23 @@ Summary:	libvisual plugins
 Summary(pl):	Wtyczki dla libvisual
 Name:		libvisual-plugins
 Version:	0.2.0
-Release:	1
+Release:	0.1
 License:	GPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/libvisual/%{name}-%{version}.tar.gz
 # Source0-md5:	b7c7dcae33a510af36c6bb9cdb7133dd
 URL:		http://libvisual.sourceforge.net/
+BuildRequires:	OpenGL-devel
 BuildRequires:	SDL-devel >= 1.2.0
-BuildRequires:	X11 >= 6.8.0
+BuildRequires:	alsa-lib-devel >= 1.0.0
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	esound-devel >= 0.2.28
+BuildRequires:	gtk+2-devel
+BuildRequires:	jack-audio-connection-kit-devel >= 0.98
+#BuildRequires:	libgoom2-devel not present in cvs yet
 BuildRequires:	libtool
+BuildRequires:	libvisual-devel >= 0.2.0
 BuildRequires:	pkgconfig >= 1:0.14
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -94,17 +100,17 @@ actor-lv_analyzer plugin for libvisual.
 %description -n libvisual-plugin-actor-lv_analyzer -l pl
 Wtyczka actor-lv_analyzer dla libvisual.
 
-#%package -n libvisual-plugin-actor-lv_dna 
-#Summary: actor-lv_dna plugin for libvisual 
-#Summary(pl): Wtyczka actor-lv_dna dla libvisual
-#Group: Libraries 
-#Requires: %{name} = %{version}-%{release}
+%package -n libvisual-plugin-actor-lv_dna
+Summary: actor-lv_dna plugin for libvisual 
+Summary(pl): Wtyczka actor-lv_dna dla libvisual
+Group: Libraries 
+Requires: %{name} = %{version}-%{release}
 
-#%description -n libvisual-plugin-actor-lv_dna
-#actor-lv_dna plugin for libvisual.
+%description -n libvisual-plugin-actor-lv_dna
+actor-lv_dna plugin for libvisual.
 
-#%description -n libvisual-plugin-actor-lv_dna -l pl 
-#Wtyczka actor-lv_dna dla libvisual.
+%description -n libvisual-plugin-actor-lv_dna -l pl 
+Wtyczka actor-lv_dna dla libvisual.
 
 %package -n libvisual-plugin-actor-lv_gltest
 Summary:	actor-lv_gltest plugin for libvisual
@@ -281,7 +287,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT%{_libdir}/{actor,input,morph}
+rm -f $RPM_BUILD_ROOT%{_libdir}/libvisual/*/*.{a,la}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
