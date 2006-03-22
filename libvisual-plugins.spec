@@ -277,8 +277,8 @@ Wtyczka morph-tentacle dla libvisual.
 %{__autoheader}
 %{__autoconf}
 %{__automake}
-%configure \
-	--enable-static
+%configure
+
 %{__make}
 
 %install
@@ -287,7 +287,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{_libdir}/libvisual/*/*.{a,la}
+rm -f $RPM_BUILD_ROOT%{_libdir}/libvisual/*/*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
