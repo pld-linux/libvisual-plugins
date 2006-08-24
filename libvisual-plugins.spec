@@ -19,6 +19,7 @@ BuildRequires:	autoconf >= 2.59-9
 BuildRequires:	automake >= 1:1.7
 BuildRequires:	bison
 BuildRequires:	esound-devel >= 0.2.28
+BuildRequires:	gettext-devel
 %if %{with gstreamer}
 BuildRequires:	gstreamer-devel >= 0.8
 BuildRequires:	gstreamer-devel < 0.9
@@ -323,6 +324,7 @@ Wtyczka morph-tentacle dla libvisual.
 
 %build
 %{__libtoolize}
+%{__gettextize}
 %{__aclocal}
 %{__autoheader}
 %{__autoconf}
