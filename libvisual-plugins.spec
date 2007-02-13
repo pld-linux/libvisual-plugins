@@ -3,7 +3,7 @@
 %bcond_with	gstreamer	# build gstreamer plugin (requires gst 0.8.x)
 #
 Summary:	libvisual plugins
-Summary(pl.UTF-8):   Wtyczki dla libvisual
+Summary(pl.UTF-8):	Wtyczki dla libvisual
 Name:		libvisual-plugins
 Version:	0.4.0
 Release:	1
@@ -44,7 +44,7 @@ Wtyczki dla libvisual.
 
 %package -n libvisual-plugin-actor-JESS
 Summary:	actor-JESS plugin for libvisual
-Summary(pl.UTF-8):   Wtyczka actor-JESS dla libvisual
+Summary(pl.UTF-8):	Wtyczka actor-JESS dla libvisual
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -56,7 +56,7 @@ Wtyczka actor-JESS dla libvisual.
 
 %package -n libvisual-plugin-actor-bumpscope
 Summary:	actor-bumpscope plugin for libvisual
-Summary(pl.UTF-8):   Wtyczka actor-bumpscope dla libvisual
+Summary(pl.UTF-8):	Wtyczka actor-bumpscope dla libvisual
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -68,7 +68,7 @@ Wtyczka actor-bumpscope dla libvisual.
 
 %package -n libvisual-plugin-actor-corona
 Summary:	actor-corona plugin for libvisual
-Summary(pl.UTF-8):   Wtyczka actor-corona dla libvisual
+Summary(pl.UTF-8):	Wtyczka actor-corona dla libvisual
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -80,7 +80,7 @@ Wtyczka actor-corona dla libvisual.
 
 %package -n libvisual-plugin-actor-flower
 Summary:	actor-flower plugin for libvisual
-Summary(pl.UTF-8):   Wtyczka actor-flower dla libvisual
+Summary(pl.UTF-8):	Wtyczka actor-flower dla libvisual
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -92,7 +92,7 @@ Wtyczka actor-flower dla libvisual.
 
 %package -n libvisual-plugin-actor-gdkpixbuf
 Summary:	actor-gdkpixbuf plugin for libvisual
-Summary(pl.UTF-8):   Wtyczka actor-gdkpixbuf dla libvisual
+Summary(pl.UTF-8):	Wtyczka actor-gdkpixbuf dla libvisual
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -104,7 +104,7 @@ Wtyczka actor-gdkpixbuf dla libvisual.
 
 %package -n libvisual-plugin-actor-gforce
 Summary:	actor-gforce plugin for libvisual
-Summary(pl.UTF-8):   Wtyczka actor-gforce dla libvisual
+Summary(pl.UTF-8):	Wtyczka actor-gforce dla libvisual
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -116,7 +116,7 @@ Wtyczka actor-gforce dla libvisual.
 
 %package -n libvisual-plugin-actor-gstreamer
 Summary:	actor-gstreamer plugin for libvisual
-Summary(pl.UTF-8):   Wtyczka actor-gstreamer dla libvisual
+Summary(pl.UTF-8):	Wtyczka actor-gstreamer dla libvisual
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -128,7 +128,7 @@ Wtyczka actor-gstreamer dla libvisual.
 
 %package -n libvisual-plugin-actor-infinite
 Summary:	actor-infinite plugin for libvisual
-Summary(pl.UTF-8):   Wtyczka actor-infinite dla libvisual
+Summary(pl.UTF-8):	Wtyczka actor-infinite dla libvisual
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -140,7 +140,7 @@ Wtyczka actor-infinite dla libvisual.
 
 %package -n libvisual-plugin-actor-jakdaw
 Summary:	actor-jakdaw plugin for libvisual
-Summary(pl.UTF-8):   Wtyczka actor-jakdaw dla libvisual
+Summary(pl.UTF-8):	Wtyczka actor-jakdaw dla libvisual
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -152,7 +152,7 @@ Wtyczka actor-jakdaw dla libvisual.
 
 %package -n libvisual-plugin-actor-lv_analyzer
 Summary:	actor-lv_analyzer plugin for libvisual
-Summary(pl.UTF-8):   Wtyczka actor-lv_analyzer dla libvisual
+Summary(pl.UTF-8):	Wtyczka actor-lv_analyzer dla libvisual
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -164,7 +164,7 @@ Wtyczka actor-lv_analyzer dla libvisual.
 
 %package -n libvisual-plugin-actor-lv_gltest
 Summary:	actor-lv_gltest plugin for libvisual
-Summary(pl.UTF-8):   Wtyczka actor-lv_gltest dla libvisual
+Summary(pl.UTF-8):	Wtyczka actor-lv_gltest dla libvisual
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -176,7 +176,7 @@ Wtyczka actor-lv_gltest dla libvisual.
 
 %package -n libvisual-plugin-actor-lv_scope
 Summary:	actor-lv_scope plugin for libvisual
-Summary(pl.UTF-8):   Wtyczka actor-lv_scope dla libvisual
+Summary(pl.UTF-8):	Wtyczka actor-lv_scope dla libvisual
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -188,7 +188,7 @@ Wtyczka actor-lv_scope dla libvisual
 
 %package -n libvisual-plugin-actor-madspin
 Summary:	actor-madspin plugin for libvisual
-Summary(pl.UTF-8):   Wtyczka actor-madspin dla libvisual
+Summary(pl.UTF-8):	Wtyczka actor-madspin dla libvisual
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -200,7 +200,7 @@ Wtyczka actor-madspin dla libvisual.
 
 %package -n libvisual-plugin-actor-nastyfft
 Summary:	actor-nastyfft plugin for libvisual
-Summary(pl.UTF-8):   Wtyczka actor-nastyfft dla libvisual
+Summary(pl.UTF-8):	Wtyczka actor-nastyfft dla libvisual
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -212,7 +212,7 @@ Wtyczka actor-nastyfft dla libvisual.
 
 %package -n libvisual-plugin-actor-oinksie
 Summary:	actor-oinksie plugin for libvisual
-Summary(pl.UTF-8):   Wtyczka actor-oinksie dla libvisual
+Summary(pl.UTF-8):	Wtyczka actor-oinksie dla libvisual
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -224,7 +224,7 @@ Wtyczka actor-oinksie dla libvisual.
 
 %package -n libvisual-plugin-input-alsa
 Summary:	ALSA input plugin for libvisual
-Summary(pl.UTF-8):   Wtyczka wejścia ALSA dla libvisual
+Summary(pl.UTF-8):	Wtyczka wejścia ALSA dla libvisual
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -236,7 +236,7 @@ Wtyczka wejściowa ALSA dla libvisual.
 
 %package -n libvisual-plugin-input-esd
 Summary:	ESD input plugin for libvisual
-Summary(pl.UTF-8):   Wtyczka wejściowa ESD dla libvisual
+Summary(pl.UTF-8):	Wtyczka wejściowa ESD dla libvisual
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -248,7 +248,7 @@ Wtyczka wejściowa ESD dla libvisual.
 
 %package -n libvisual-plugin-input-jack
 Summary:	JACK input plugin for libvisual
-Summary(pl.UTF-8):   Wtyczka wejściowa JACK dla libvisual
+Summary(pl.UTF-8):	Wtyczka wejściowa JACK dla libvisual
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -260,7 +260,7 @@ Wtyczka wejściowa JACK dla libvisual.
 
 %package -n libvisual-plugin-input-mplayer
 Summary:	Mplayer input plugin for libvisual
-Summary(pl.UTF-8):   Wtyczka wejściowa mplayera dla libvisual
+Summary(pl.UTF-8):	Wtyczka wejściowa mplayera dla libvisual
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -272,7 +272,7 @@ Wtyczka wejściowa mplayera dla libvisual.
 
 %package -n libvisual-plugin-morph-alphablend
 Summary:	morph-alphablend plugin for libvisual
-Summary(pl.UTF-8):   Wtyczka morph-alphablend dla libvisual
+Summary(pl.UTF-8):	Wtyczka morph-alphablend dla libvisual
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -284,7 +284,7 @@ Wtyczka morph-alphablend dla libvisual.
 
 %package -n libvisual-plugin-morph-flash
 Summary:	morph-flash plugin for libvisual
-Summary(pl.UTF-8):   Wtyczka morph-flash dla libvisual
+Summary(pl.UTF-8):	Wtyczka morph-flash dla libvisual
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -296,7 +296,7 @@ Wtyczka morph-flash dla libvisual.
 
 %package -n libvisual-plugin-morph-slide
 Summary:	morph-slide plugin for libvisual
-Summary(pl.UTF-8):   Wtyczka morph-slide dla libvisual
+Summary(pl.UTF-8):	Wtyczka morph-slide dla libvisual
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -308,7 +308,7 @@ Wtyczka morph-slide dla libvisual.
 
 %package -n libvisual-plugin-morph-tentacle
 Summary:	morph-tentacle plugin for libvisual
-Summary(pl.UTF-8):   Wtyczka morph-tentacle dla libvisual
+Summary(pl.UTF-8):	Wtyczka morph-tentacle dla libvisual
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
