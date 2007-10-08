@@ -6,7 +6,7 @@ Summary:	libvisual plugins
 Summary(pl.UTF-8):	Wtyczki dla libvisual
 Name:		libvisual-plugins
 Version:	0.4.0
-Release:	1
+Release:	2
 License:	GPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/libvisual/%{name}-%{version}.tar.gz
