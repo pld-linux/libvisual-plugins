@@ -6,7 +6,7 @@ Summary:	libvisual plugins
 Summary(pl.UTF-8):	Wtyczki dla libvisual
 Name:		libvisual-plugins
 Version:	0.4.0
-Release:	2
+Release:	3
 License:	GPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/libvisual/%{name}-%{version}.tar.gz
@@ -321,6 +321,11 @@ Wtyczka morph-tentacle dla libvisual.
 %prep
 %setup -q
 %patch0 -p1
+
+mv -f po/{es_ES,es}.po
+# es_AR is a copy of es
+rm -f po/es_AR.po
+sed -i -e 's|es_ES es_AR|es|' po/LINGUAS
 
 %build
 %{__libtoolize}
