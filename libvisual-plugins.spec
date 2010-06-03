@@ -1,12 +1,13 @@
 #
 # Conditional build:
 %bcond_with	gstreamer	# build gstreamer plugin (requires gst 0.8.x)
+%bcond_with	esd		# build esd plugin
 #
 Summary:	libvisual plugins
 Summary(pl.UTF-8):	Wtyczki dla libvisual
 Name:		libvisual-plugins
 Version:	0.4.0
-Release:	4
+Release:	5
 License:	GPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/libvisual/%{name}-%{version}.tar.gz
@@ -18,7 +19,9 @@ BuildRequires:	alsa-lib-devel >= 1.0.0
 BuildRequires:	autoconf >= 2.59-9
 BuildRequires:	automake >= 1:1.7
 BuildRequires:	bison
+%if %{with esd}
 BuildRequires:	esound-devel >= 0.2.28
+%endif
 BuildRequires:	gettext-devel
 %if %{with gstreamer}
 BuildRequires:	gstreamer-devel >= 0.8
@@ -428,9 +431,11 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libvisual-*/input/input_alsa.so
 
+%if %{with esd}
 %files -n libvisual-plugin-input-esd
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libvisual-*/input/input_esd.so
+%endif
 
 %files -n libvisual-plugin-input-jack
 %defattr(644,root,root,755)
