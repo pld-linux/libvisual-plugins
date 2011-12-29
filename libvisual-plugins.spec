@@ -7,13 +7,15 @@ Summary:	libvisual plugins
 Summary(pl.UTF-8):	Wtyczki dla libvisual
 Name:		libvisual-plugins
 Version:	0.4.0
-Release:	5
-License:	GPL
+Release:	6
+License:	GPL v2+
 Group:		Libraries
-Source0:	http://dl.sourceforge.net/libvisual/%{name}-%{version}.tar.gz
+Source0:	http://downloads.sourceforge.net/libvisual/%{name}-%{version}.tar.gz
 # Source0-md5:	4330e9287f9d6fae02f482f428a1e77b
 Patch0:		%{name}-ac.patch
-URL:		http://localhost.nl/~synap/libvisual/
+# original URL defunct, use sf
+#URL:		http://localhost.nl/~synap/libvisual/
+URL:		http://libvisual.sourceforge.net/
 BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	alsa-lib-devel >= 1.0.0
 BuildRequires:	autoconf >= 2.59-9
@@ -22,14 +24,13 @@ BuildRequires:	bison
 %if %{with esd}
 BuildRequires:	esound-devel >= 0.2.28
 %endif
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-devel >= 0.14.1
 %if %{with gstreamer}
 BuildRequires:	gstreamer-devel >= 0.8
 BuildRequires:	gstreamer-devel < 0.9
 %endif
 BuildRequires:	gtk+2-devel >= 2.0
 BuildRequires:	jack-audio-connection-kit-devel >= 0.98.0
-#BuildRequires:	libgoom2-devel not present in cvs yet
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:1.5
 BuildRequires:	libvisual-devel >= 0.4.0
@@ -46,188 +47,215 @@ libvisual plugins.
 Wtyczki dla libvisual.
 
 %package -n libvisual-plugin-actor-JESS
-Summary:	actor-JESS plugin for libvisual
-Summary(pl.UTF-8):	Wtyczka actor-JESS dla libvisual
+Summary:	JESS actor plugin for libvisual
+Summary(pl.UTF-8):	Wtyczka aktora JESS dla libvisual
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description -n libvisual-plugin-actor-JESS
-actor-JESS plugin for libvisual.
+JESS actor plugin for libvisual.
 
 %description -n libvisual-plugin-actor-JESS -l pl.UTF-8
-Wtyczka actor-JESS dla libvisual.
+Wtyczka aktora JESS dla libvisual.
 
 %package -n libvisual-plugin-actor-bumpscope
-Summary:	actor-bumpscope plugin for libvisual
-Summary(pl.UTF-8):	Wtyczka actor-bumpscope dla libvisual
+Summary:	Bumpscope actor plugin for libvisual
+Summary(pl.UTF-8):	Wtyczka aktora Bumpscope dla libvisual
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description -n libvisual-plugin-actor-bumpscope
-actor-bumpscope plugin for libvisual.
+Bumpscope actor plugin for libvisual - a port of Bumpscope plugin for
+XMMS.
 
 %description -n libvisual-plugin-actor-bumpscope -l pl.UTF-8
-Wtyczka actor-bumpscope dla libvisual.
+Wtyczka aktora Bumpscope dla libvisual - port wtyczki Bumpscope dla
+XMMS-a.
 
 %package -n libvisual-plugin-actor-corona
-Summary:	actor-corona plugin for libvisual
-Summary(pl.UTF-8):	Wtyczka actor-corona dla libvisual
+Summary:	corona actor plugin for libvisual
+Summary(pl.UTF-8):	Wtyczka aktora corona dla libvisual
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description -n libvisual-plugin-actor-corona
-actor-corona plugin for libvisual.
+corona actor plugin for libvisual.
 
 %description -n libvisual-plugin-actor-corona -l pl.UTF-8
-Wtyczka actor-corona dla libvisual.
+Wtyczka aktora corona dla libvisual.
 
 %package -n libvisual-plugin-actor-flower
-Summary:	actor-flower plugin for libvisual
-Summary(pl.UTF-8):	Wtyczka actor-flower dla libvisual
+Summary:	Pseudotoad flower actor plugin for libvisual - Yellow Rose of Texas
+Summary(pl.UTF-8):	Wtyczka aktora Pseudotoad flower dla libvisual - Yellow Rose of Texas
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description -n libvisual-plugin-actor-flower
-actor-flower plugin for libvisual.
+Pseudotoad flower actor plugin for libvisual - Yellow Rose of Texas.
+This plugin renders an awesome responsive flower.
 
 %description -n libvisual-plugin-actor-flower -l pl.UTF-8
-Wtyczka actor-flower dla libvisual.
+Wtyczka aktora Pseudotoad flower dla libvisual - Yellow Rose of Texas.
+Ta wtyczka rysuje reagujący kwiatek.
 
 %package -n libvisual-plugin-actor-gdkpixbuf
-Summary:	actor-gdkpixbuf plugin for libvisual
-Summary(pl.UTF-8):	Wtyczka actor-gdkpixbuf dla libvisual
+Summary:	GdkPixbuf actor plugin for libvisual - image loader
+Summary(pl.UTF-8):	Wtyczka aktora GdkPixbuf dla libvisual - wczytująca obrazki
+License:	LGPL v2.1+
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description -n libvisual-plugin-actor-gdkpixbuf
-actor-gdkpixbuf plugin for libvisual.
+GdkPixbuf actor plugin for libvisual. It can be used to show images.
 
 %description -n libvisual-plugin-actor-gdkpixbuf -l pl.UTF-8
-Wtyczka actor-gdkpixbuf dla libvisual.
+Wtyczka aktora GdkPixbuf dla libvisual. Potrafi pokazywać obrazki.
 
 %package -n libvisual-plugin-actor-gforce
-Summary:	actor-gforce plugin for libvisual
-Summary(pl.UTF-8):	Wtyczka actor-gforce dla libvisual
+Summary:	G-Force actor plugin for libvisual
+Summary(pl.UTF-8):	Wtyczka aktora G-Force dla libvisual
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description -n libvisual-plugin-actor-gforce
-actor-gforce plugin for libvisual.
+G-Force actor plugin for libvisual - UNIX port of G-Force plugin for
+Winamp.
 
 %description -n libvisual-plugin-actor-gforce -l pl.UTF-8
-Wtyczka actor-gforce dla libvisual.
+Wtyczka aktura G-Force dla libvisual - uniksowy port wtyczki G-Force
+dla Winampa.
 
 %package -n libvisual-plugin-actor-gstreamer
-Summary:	actor-gstreamer plugin for libvisual
-Summary(pl.UTF-8):	Wtyczka actor-gstreamer dla libvisual
+Summary:	GStreamer actor plugin for libvisual - play video or do effects
+Summary(pl.UTF-8):	Wtyczka aktora GStreamer dla libvisual - odtwarzanie filmów lub pokazywanie efektów
+License:	LGPL v2.1+
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description -n libvisual-plugin-actor-gstreamer
-actor-gstreamer plugin for libvisual.
+GStreamer actor plugin for libvisual. It's capable of using gstreamer
+to play video or do effects using the gstreamer pipeline.
 
 %description -n libvisual-plugin-actor-gstreamer -l pl.UTF-8
-Wtyczka actor-gstreamer dla libvisual.
+Wtyczka aktora GStreamer dla libvisual. Potrafi wykorzystywać
+gstreamera do odtwarzania filmów lub pokazywania efektów przy użyciu
+potoku gstreamera.
 
 %package -n libvisual-plugin-actor-infinite
-Summary:	actor-infinite plugin for libvisual
-Summary(pl.UTF-8):	Wtyczka actor-infinite dla libvisual
+Summary:	Infinite actor plugin for libvisual
+Summary(pl.UTF-8):	Wtyczka aktora Infinite dla libvisual
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description -n libvisual-plugin-actor-infinite
-actor-infinite plugin for libvisual.
+Infinite actor plugin for libvisual.
 
 %description -n libvisual-plugin-actor-infinite -l pl.UTF-8
-Wtyczka actor-infinite dla libvisual.
+Wtyczka aktora Infinite dla libvisual.
 
 %package -n libvisual-plugin-actor-jakdaw
-Summary:	actor-jakdaw plugin for libvisual
-Summary(pl.UTF-8):	Wtyczka actor-jakdaw dla libvisual
+Summary:	Jakdaw actor plugin for libvisual
+Summary(pl.UTF-8):	Wtyczka aktora Jakdaw dla libvisual
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description -n libvisual-plugin-actor-jakdaw
-actor-jakdaw plugin for libvisual.
+Jakdaw actor plugin for libvisual - port of XMMS Jakdaw plugin.
 
 %description -n libvisual-plugin-actor-jakdaw -l pl.UTF-8
-Wtyczka actor-jakdaw dla libvisual.
+Wtyczka aktora Jakdaw dla libvisual - port wtyczki Jakdaw dla XMMS-a.
 
 %package -n libvisual-plugin-actor-lv_analyzer
-Summary:	actor-lv_analyzer plugin for libvisual
-Summary(pl.UTF-8):	Wtyczka actor-lv_analyzer dla libvisual
+Summary:	lv_analyzer actor plugin for libvisual - a nice simple spectrum analyzer
+Summary(pl.UTF-8):	Wtyczka aktora lv_analyzer dla libvisual - przyjemny analizator widma
+License:	LGPL v2.1+
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description -n libvisual-plugin-actor-lv_analyzer
-actor-lv_analyzer plugin for libvisual.
+lv_analyzer actor plugin for libvisual - a nice simple spectrum
+analyzer.
 
 %description -n libvisual-plugin-actor-lv_analyzer -l pl.UTF-8
-Wtyczka actor-lv_analyzer dla libvisual.
+Wtyczka aktora lv_analyzer dla libvisual - przyjemny, prosty
+analizator widma.
 
 %package -n libvisual-plugin-actor-lv_gltest
-Summary:	actor-lv_gltest plugin for libvisual
-Summary(pl.UTF-8):	Wtyczka actor-lv_gltest dla libvisual
+Summary:	lv_gltest actor plugin for libvisual - OpenGL analyzer
+Summary(pl.UTF-8):	Wtyczka aktora lv_gltest dla libvisual - analizator OpenGL
+License:	LGPL v2.1+
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description -n libvisual-plugin-actor-lv_gltest
-actor-lv_gltest plugin for libvisual.
+lv_gltest actor plugin for libvisual. This plugin shows an OpenGL bar
+analyzer like the XMMS one.
 
 %description -n libvisual-plugin-actor-lv_gltest -l pl.UTF-8
-Wtyczka actor-lv_gltest dla libvisual.
+Wtyczka aktora lv_gltest dla libvisual. Wyświetla w OpenGL-u pasek
+analizatora podobny do tego w XMMS-ie.
 
 %package -n libvisual-plugin-actor-lv_scope
-Summary:	actor-lv_scope plugin for libvisual
-Summary(pl.UTF-8):	Wtyczka actor-lv_scope dla libvisual
+Summary:	lv_scope actor plugin for libvisual - display simple scope
+Summary(pl.UTF-8):	Wtyczka aktora lv_scope dla libvisual - wyświetlanie prostego zakresu
+License:	LGPL v2.1+
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description -n libvisual-plugin-actor-lv_scope
-actor-lv_scope plugin for libvisual.
+lv_scope actor plugin for libvisual - a test plugin that displays a
+simple scope.
 
 %description -n libvisual-plugin-actor-lv_scope -l pl.UTF-8
-Wtyczka actor-lv_scope dla libvisual
+Wtyczka aktora lv_scope dla libvisual - wtyczka testowa wyświetlająca
+prosty zakres.
 
 %package -n libvisual-plugin-actor-madspin
-Summary:	actor-madspin plugin for libvisual
-Summary(pl.UTF-8):	Wtyczka actor-madspin dla libvisual
+Summary:	madspin actor plugin for libvisual - a nifty visual effect using OpenGL
+Summary(pl.UTF-8):	Wtyczka aktora madspin dla libvisual - efekt wizualny wykorzystujący OpenGL
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description -n libvisual-plugin-actor-madspin
-actor-madspin plugin for libvisual.
+madspin actor plugin for libvisual - a nifty visual effect using
+OpenGL.
 
 %description -n libvisual-plugin-actor-madspin -l pl.UTF-8
-Wtyczka actor-madspin dla libvisual.
+Wtyczka aktora madspin dla libvisual - efekt wizualny wykorzystujący
+OpenGL.
 
 %package -n libvisual-plugin-actor-nastyfft
-Summary:	actor-nastyfft plugin for libvisual
-Summary(pl.UTF-8):	Wtyczka actor-nastyfft dla libvisual
+Summary:	NastyFFT actor plugin for libvisual
+Summary(pl.UTF-8):	Wtyczka aktora NastyFFT dla libvisual
+License:	LGPL v2.1+
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description -n libvisual-plugin-actor-nastyfft
-actor-nastyfft plugin for libvisual.
+NastyFFT actor plugin for libvisual. It shows nasty FFT visualization
+effect using OpenGL.
 
 %description -n libvisual-plugin-actor-nastyfft -l pl.UTF-8
-Wtyczka actor-nastyfft dla libvisual.
+Wtyczka aktora NastyFFT dla libvisual - wyświetla paskudny efekt
+wizualizacji FFT przy użyciu OpenGL.
 
 %package -n libvisual-plugin-actor-oinksie
-Summary:	actor-oinksie plugin for libvisual
-Summary(pl.UTF-8):	Wtyczka actor-oinksie dla libvisual
+Summary:	Oinksie actor plugin for libvisual
+Summary(pl.UTF-8):	Wtyczka aktora Oinksie dla libvisual
+License:	LGPL v2.1+
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description -n libvisual-plugin-actor-oinksie
-actor-oinksie plugin for libvisual.
+Oinksie actor plugin for libvisual.
 
 %description -n libvisual-plugin-actor-oinksie -l pl.UTF-8
-Wtyczka actor-oinksie dla libvisual.
+Wtyczka aktora Oinksie dla libvisual.
 
 %package -n libvisual-plugin-input-alsa
 Summary:	ALSA input plugin for libvisual
 Summary(pl.UTF-8):	Wtyczka wejścia ALSA dla libvisual
+License:	LGPL v2.1+
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -240,8 +268,10 @@ Wtyczka wejściowa ALSA dla libvisual.
 %package -n libvisual-plugin-input-esd
 Summary:	ESD input plugin for libvisual
 Summary(pl.UTF-8):	Wtyczka wejściowa ESD dla libvisual
+License:	LGPL v2.1+
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	esound-libs >= 0.2.28
 
 %description -n libvisual-plugin-input-esd
 ESD input plugin for libvisual.
@@ -252,8 +282,10 @@ Wtyczka wejściowa ESD dla libvisual.
 %package -n libvisual-plugin-input-jack
 Summary:	JACK input plugin for libvisual
 Summary(pl.UTF-8):	Wtyczka wejściowa JACK dla libvisual
+License:	LGPL v2.1+
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
+BuildRequires:	jack-audio-connection-kit-libs >= 0.98.0
 
 %description -n libvisual-plugin-input-jack
 JACK input plugin for libvisual.
@@ -262,64 +294,81 @@ JACK input plugin for libvisual.
 Wtyczka wejściowa JACK dla libvisual.
 
 %package -n libvisual-plugin-input-mplayer
-Summary:	Mplayer input plugin for libvisual
-Summary(pl.UTF-8):	Wtyczka wejściowa mplayera dla libvisual
+Summary:	MPlayer input plugin for libvisual - use data exported from MPlayer
+Summary(pl.UTF-8):	Wtyczka wejściowa MPlayer dla libvisual - odczyt danych wyeksportowanych z MPlayera
+License:	LGPL v2.1+
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description -n libvisual-plugin-input-mplayer
-Mplayer input plugin for libvisual.
+MPlayer input plugin for libvisual. It uses data exported from
+'mplayer -af export'.
 
 %description -n libvisual-plugin-input-mplayer -l pl.UTF-8
-Wtyczka wejściowa mplayera dla libvisual.
+Wtyczka wejściowa MPlayer dla libvisual. Wykorzystuje dane
+wyeksportowane z polecenia "mplayer -af export".
 
 %package -n libvisual-plugin-morph-alphablend
-Summary:	morph-alphablend plugin for libvisual
-Summary(pl.UTF-8):	Wtyczka morph-alphablend dla libvisual
+Summary:	alphablend morph plugin for libvisual
+Summary(pl.UTF-8):	Wtyczka przejść alphablend dla libvisual
+License:	LGPL v2.1+
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description -n libvisual-plugin-morph-alphablend
-morph-alphablend plugin for libvisual.
+alphablend morph plugin for libvisual. It morphs between two video
+sources using the alphablend method.
 
 %description -n libvisual-plugin-morph-alphablend -l pl.UTF-8
-Wtyczka morph-alphablend dla libvisual.
+Wtyczka przejść alphablend dla libvisual. Wykonuje przejście między
+dwoma źródłami obrazu przy użyciu metody alphablend (blendingu z
+kanałem alpha).
 
 %package -n libvisual-plugin-morph-flash
-Summary:	morph-flash plugin for libvisual
-Summary(pl.UTF-8):	Wtyczka morph-flash dla libvisual
+Summary:	flash morph plugin for libvisual - an flash in and out morph
+Summary(pl.UTF-8):	Wtyczka przejścia flash dla libvisual - przejscie przez jasny błysk
+License:	LGPL v2.1+
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description -n libvisual-plugin-morph-flash
-morph-flash plugin for libvisual.
+flash morph plugin for libvisual. It morphs between two video sources
+using a bright flash.
 
 %description -n libvisual-plugin-morph-flash -l pl.UTF-8
-Wtyczka morph-flash dla libvisual.
+Wtyczka przejścia flash dla libvisual. Wykonuje przejście między dwoma
+źródłami obrazu przy użyciu jasnego błysku.
 
 %package -n libvisual-plugin-morph-slide
-Summary:	morph-slide plugin for libvisual
-Summary(pl.UTF-8):	Wtyczka morph-slide dla libvisual
+Summary:	Slide morph plugin for libvisual - slide in/out morph plugin
+Summary(pl.UTF-8):	Wtyczka przejścia slide dla libvisual - zmiana slajdów
+License:	LGPL v2.1+
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description -n libvisual-plugin-morph-slide
-morph-slide plugin for libvisual.
+Slide morph plugin for libvisual. It morphs between two video sources
+by sliding one in and the other out.
 
 %description -n libvisual-plugin-morph-slide -l pl.UTF-8
-Wtyczka morph-slide dla libvisual.
+Wtyczka przejścia slide dla libvisual. Wykonuje przejście między dwoma
+źródłami obrazu poprzez wsunięcie jednego i wysunięcie drugiego.
 
 %package -n libvisual-plugin-morph-tentacle
-Summary:	morph-tentacle plugin for libvisual
-Summary(pl.UTF-8):	Wtyczka morph-tentacle dla libvisual
+Summary:	tentacle morph plugin for libvisual - some sort of wave that grows in size
+Summary(pl.UTF-8):	Wtyczka przejścia tentacle dla libvisual - powiększająca się fala
+License:	LGPL v2.1+
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description -n libvisual-plugin-morph-tentacle
-morph-tentacle plugin for libvisual.
+tentacle morph plugin for libvisual. It morphs between two video
+sources using some sort of wave that grows in size.
 
 %description -n libvisual-plugin-morph-tentacle -l pl.UTF-8
-Wtyczka morph-tentacle dla libvisual.
+Wtyczka przejścia tentacle dla libvisual. Wykonuje przejście między
+dwoma źródłami obrazu przy użyciu pewnego rodzaju powiększającej się
+fali.
 
 %prep
 %setup -q
@@ -343,11 +392,11 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{_libdir}/libvisual-*/*/*.la
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libvisual-*/*/*.la
 
 mv -f $RPM_BUILD_ROOT%{_datadir}/locale/{es_ES,es}
 # es_AR is a copy of es
-rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/es_AR
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/es_AR
 
 %find_lang %{name}-0.4
 
@@ -385,6 +434,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n libvisual-plugin-actor-gforce
 %defattr(644,root,root,755)
+%doc plugins/actor/G-Force/{AUTHORS,COPYING,NEWS,README,TODO,docs/G-Force.txt}
 %attr(755,root,root) %{_libdir}/libvisual-*/actor/actor_gforce.so
 %{_datadir}/libvisual-plugins-*/actor/actor_gforce
 
