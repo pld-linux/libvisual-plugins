@@ -24,7 +24,7 @@ BuildRequires:	bison
 %if %{with esd}
 BuildRequires:	esound-devel >= 0.2.28
 %endif
-BuildRequires:	gettext-devel >= 0.14.1
+BuildRequires:	gettext-tools >= 0.14.1
 %if %{with gstreamer}
 BuildRequires:	gstreamer-devel >= 0.8
 BuildRequires:	gstreamer-devel < 0.9
