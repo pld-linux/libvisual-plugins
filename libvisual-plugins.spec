@@ -13,9 +13,7 @@ Group:		Libraries
 Source0:	http://downloads.sourceforge.net/libvisual/%{name}-%{version}.tar.gz
 # Source0-md5:	4330e9287f9d6fae02f482f428a1e77b
 Patch0:		%{name}-ac.patch
-# original URL defunct, use sf
-#URL:		http://localhost.nl/~synap/libvisual/
-URL:		http://libvisual.sourceforge.net/
+URL:		http://libvisual.org/
 BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	alsa-lib-devel >= 1.0.0
 BuildRequires:	autoconf >= 2.59-9
