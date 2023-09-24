@@ -1,17 +1,17 @@
 #
 # Conditional build:
-%bcond_with	gstreamer	# build gstreamer plugin (requires gst 0.8.x)
-%bcond_with	esd		# build esd plugin
+%bcond_with	gstreamer	# GStreamer plugin (requires gst 0.8.x)
+%bcond_with	esd		# esd (EsounD) plugin
 #
 Summary:	libvisual plugins
 Summary(pl.UTF-8):	Wtyczki dla libvisual
 Name:		libvisual-plugins
-Version:	0.4.0
-Release:	6
+Version:	0.4.1
+Release:	1
 License:	GPL v2+
 Group:		Libraries
-Source0:	http://downloads.sourceforge.net/libvisual/%{name}-%{version}.tar.gz
-# Source0-md5:	4330e9287f9d6fae02f482f428a1e77b
+Source0:	https://downloads.sourceforge.net/libvisual/%{name}-%{version}.tar.gz
+# Source0-md5:	70078446fe20444f098d31d245c173bb
 Patch0:		%{name}-ac.patch
 URL:		http://libvisual.org/
 BuildRequires:	OpenGL-GLU-devel
@@ -22,7 +22,7 @@ BuildRequires:	bison
 %if %{with esd}
 BuildRequires:	esound-devel >= 0.2.28
 %endif
-BuildRequires:	gettext-tools >= 0.14.1
+BuildRequires:	gettext-tools >= 0.19
 %if %{with gstreamer}
 BuildRequires:	gstreamer-devel >= 0.8
 BuildRequires:	gstreamer-devel < 0.9
@@ -34,9 +34,17 @@ BuildRequires:	libtool >= 2:1.5
 BuildRequires:	libvisual-devel >= 0.4.0
 BuildRequires:	pkgconfig >= 1:0.14
 BuildRequires:	xorg-lib-libXxf86vm-devel
-Obsoletes:	libvisual-plugin-actor-lv_dna
-Obsoletes:	libvisual-plugin-actor-plazma
+%if %{without gstreamer}
+Obsoletes:	libvisual-plugin-actor-gstreamer < %{version}-%{release}
+%endif
+Obsoletes:	libvisual-plugin-actor-lv_dna < 0.4
+Obsoletes:	libvisual-plugin-actor-plazma < 0.4
+%if %{without esd}
+Obsoletes:	libvisual-plugin-input-esd < %{version}-%{release}
+%endif
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		abiver	0.4
 
 %description
 libvisual plugins.
@@ -376,10 +384,11 @@ fali.
 %{__libtoolize}
 %{__gettextize}
 %{__aclocal}
-%{__autoheader}
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 %configure \
+	%{!?with_esd:--disable-esd} \
 	%{!?with_gstreamer:--disable-gstreamer-plugin}
 
 %{__make}
@@ -392,11 +401,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/libvisual-*/*/*.la
 
-mv -f $RPM_BUILD_ROOT%{_datadir}/locale/{es_ES,es}
-# es_AR is a copy of es
-%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/es_AR
+%{__mv} $RPM_BUILD_ROOT%{_localedir}/{es_ES,es}
 
-%find_lang %{name}-0.4
+%find_lang %{name}-%{abiver}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -404,107 +411,107 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}-0.4.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO
-%dir %{_libdir}/libvisual-*/actor
-%dir %{_libdir}/libvisual-*/input
-%dir %{_libdir}/libvisual-*/morph
-%dir %{_datadir}/libvisual-plugins-*
-%dir %{_datadir}/libvisual-plugins-*/actor
+%dir %{_libdir}/libvisual-%{abiver}/actor
+%dir %{_libdir}/libvisual-%{abiver}/input
+%dir %{_libdir}/libvisual-%{abiver}/morph
+%dir %{_datadir}/libvisual-plugins-%{abiver}
+%dir %{_datadir}/libvisual-plugins-%{abiver}/actor
 
 %files -n libvisual-plugin-actor-JESS
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libvisual-*/actor/actor_JESS.so
+%attr(755,root,root) %{_libdir}/libvisual-%{abiver}/actor/actor_JESS.so
 
 %files -n libvisual-plugin-actor-bumpscope
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libvisual-*/actor/actor_bumpscope.so
+%attr(755,root,root) %{_libdir}/libvisual-%{abiver}/actor/actor_bumpscope.so
 
 %files -n libvisual-plugin-actor-corona
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libvisual-*/actor/actor_corona.so
+%attr(755,root,root) %{_libdir}/libvisual-%{abiver}/actor/actor_corona.so
 
 %files -n libvisual-plugin-actor-flower
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libvisual-*/actor/actor_flower.so
+%attr(755,root,root) %{_libdir}/libvisual-%{abiver}/actor/actor_flower.so
 
 %files -n libvisual-plugin-actor-gdkpixbuf
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libvisual-*/actor/actor_gdkpixbuf.so
+%attr(755,root,root) %{_libdir}/libvisual-%{abiver}/actor/actor_gdkpixbuf.so
 
 %files -n libvisual-plugin-actor-gforce
 %defattr(644,root,root,755)
 %doc plugins/actor/G-Force/{AUTHORS,COPYING,NEWS,README,TODO,docs/G-Force.txt}
-%attr(755,root,root) %{_libdir}/libvisual-*/actor/actor_gforce.so
-%{_datadir}/libvisual-plugins-*/actor/actor_gforce
+%attr(755,root,root) %{_libdir}/libvisual-%{abiver}/actor/actor_gforce.so
+%{_datadir}/libvisual-plugins-%{abiver}/actor/actor_gforce
 
 %if %{with gstreamer}
 %files -n libvisual-plugin-actor-gstreamer
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libvisual-*/actor/actor_gstreamer.so
+%attr(755,root,root) %{_libdir}/libvisual-%{abiver}/actor/actor_gstreamer.so
 %endif
 
 %files -n libvisual-plugin-actor-infinite
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libvisual-*/actor/actor_infinite.so
+%attr(755,root,root) %{_libdir}/libvisual-%{abiver}/actor/actor_infinite.so
 
 %files -n libvisual-plugin-actor-jakdaw
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libvisual-*/actor/actor_jakdaw.so
+%attr(755,root,root) %{_libdir}/libvisual-%{abiver}/actor/actor_jakdaw.so
 
 %files -n libvisual-plugin-actor-lv_analyzer
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libvisual-*/actor/actor_lv_analyzer.so
+%attr(755,root,root) %{_libdir}/libvisual-%{abiver}/actor/actor_lv_analyzer.so
 
 %files -n libvisual-plugin-actor-lv_gltest
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libvisual-*/actor/actor_lv_gltest.so
+%attr(755,root,root) %{_libdir}/libvisual-%{abiver}/actor/actor_lv_gltest.so
 
 %files -n libvisual-plugin-actor-lv_scope
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libvisual-*/actor/actor_lv_scope.so
+%attr(755,root,root) %{_libdir}/libvisual-%{abiver}/actor/actor_lv_scope.so
 
 %files -n libvisual-plugin-actor-madspin
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libvisual-*/actor/actor_madspin.so
-%{_datadir}/libvisual-plugins-*/actor/actor_madspin
+%attr(755,root,root) %{_libdir}/libvisual-%{abiver}/actor/actor_madspin.so
+%{_datadir}/libvisual-plugins-%{abiver}/actor/actor_madspin
 
 %files -n libvisual-plugin-actor-nastyfft
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libvisual-*/actor/actor_nastyfft.so
+%attr(755,root,root) %{_libdir}/libvisual-%{abiver}/actor/actor_nastyfft.so
 
 %files -n libvisual-plugin-actor-oinksie
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libvisual-*/actor/actor_oinksie.so
+%attr(755,root,root) %{_libdir}/libvisual-%{abiver}/actor/actor_oinksie.so
 
 %files -n libvisual-plugin-input-alsa
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libvisual-*/input/input_alsa.so
+%attr(755,root,root) %{_libdir}/libvisual-%{abiver}/input/input_alsa.so
 
 %if %{with esd}
 %files -n libvisual-plugin-input-esd
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libvisual-*/input/input_esd.so
+%attr(755,root,root) %{_libdir}/libvisual-%{abiver}/input/input_esd.so
 %endif
 
 %files -n libvisual-plugin-input-jack
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libvisual-*/input/input_jack.so
+%attr(755,root,root) %{_libdir}/libvisual-%{abiver}/input/input_jack.so
 
 %files -n libvisual-plugin-input-mplayer
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libvisual-*/input/input_mplayer.so
+%attr(755,root,root) %{_libdir}/libvisual-%{abiver}/input/input_mplayer.so
 
 %files -n libvisual-plugin-morph-alphablend
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libvisual-*/morph/morph_alphablend.so
+%attr(755,root,root) %{_libdir}/libvisual-%{abiver}/morph/morph_alphablend.so
 
 %files -n libvisual-plugin-morph-flash
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libvisual-*/morph/morph_flash.so
+%attr(755,root,root) %{_libdir}/libvisual-%{abiver}/morph/morph_flash.so
 
 %files -n libvisual-plugin-morph-slide
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libvisual-*/morph/morph_slide.so
+%attr(755,root,root) %{_libdir}/libvisual-%{abiver}/morph/morph_slide.so
 
 %files -n libvisual-plugin-morph-tentacle
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libvisual-*/morph/morph_tentacle.so
+%attr(755,root,root) %{_libdir}/libvisual-%{abiver}/morph/morph_tentacle.so
