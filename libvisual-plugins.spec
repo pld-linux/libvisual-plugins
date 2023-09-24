@@ -28,11 +28,12 @@ BuildRequires:	gtk+3-devel >= 3.0
 BuildRequires:	jack-audio-connection-kit-devel >= 0.98.0
 BuildRequires:	libstdc++-devel >= 6:4.7
 BuildRequires:	libtool >= 2:2
-BuildRequires:	libvisual-devel >= 0.4.0
+BuildRequires:	libvisual-devel >= 0.4.2
 BuildRequires:	pkgconfig >= 1:0.14
 BuildRequires:	portaudio-devel >= 19
 BuildRequires:	pulseaudio-devel
 BuildRequires:	xorg-lib-libXxf86vm-devel
+Requires:	libvisual >= 0.4.2
 %if %{without gstreamer}
 Obsoletes:	libvisual-plugin-actor-gstreamer < %{version}-%{release}
 %endif
