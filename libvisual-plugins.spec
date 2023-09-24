@@ -1,17 +1,17 @@
 #
 # Conditional build:
-%bcond_with	gstreamer	# GStreamer plugin (requires gst 0.8.x)
-%bcond_with	esd		# esd (EsounD) plugin
+%bcond_without	gstreamer	# GStreamer 1.x plugin
 #
 Summary:	libvisual plugins
 Summary(pl.UTF-8):	Wtyczki dla libvisual
 Name:		libvisual-plugins
-Version:	0.4.1
+Version:	0.4.2
 Release:	1
 License:	GPL v2+
 Group:		Libraries
-Source0:	https://downloads.sourceforge.net/libvisual/%{name}-%{version}.tar.gz
-# Source0-md5:	70078446fe20444f098d31d245c173bb
+#Source0Download: https://github.com/Libvisual/libvisual/releases
+Source0:	https://github.com/Libvisual/libvisual/releases/download/%{name}-%{version}/%{name}-%{version}.tar.bz2
+# Source0-md5:	753b1a7902c77c3d0b2ed57b09e86465
 Patch0:		%{name}-ac.patch
 URL:		http://libvisual.org/
 BuildRequires:	OpenGL-GLU-devel
@@ -19,29 +19,26 @@ BuildRequires:	alsa-lib-devel >= 1.0.0
 BuildRequires:	autoconf >= 2.59-9
 BuildRequires:	automake >= 1:1.7
 BuildRequires:	bison
-%if %{with esd}
-BuildRequires:	esound-devel >= 0.2.28
-%endif
+BuildRequires:	flex
 BuildRequires:	gettext-tools >= 0.19
 %if %{with gstreamer}
-BuildRequires:	gstreamer-devel >= 0.8
-BuildRequires:	gstreamer-devel < 0.9
+BuildRequires:	gstreamer-devel >= 1.0
 %endif
-BuildRequires:	gtk+2-devel >= 2.0
+BuildRequires:	gtk+3-devel >= 3.0
 BuildRequires:	jack-audio-connection-kit-devel >= 0.98.0
-BuildRequires:	libstdc++-devel
-BuildRequires:	libtool >= 2:1.5
+BuildRequires:	libstdc++-devel >= 6:4.7
+BuildRequires:	libtool >= 2:2
 BuildRequires:	libvisual-devel >= 0.4.0
 BuildRequires:	pkgconfig >= 1:0.14
+BuildRequires:	portaudio-devel >= 19
+BuildRequires:	pulseaudio-devel
 BuildRequires:	xorg-lib-libXxf86vm-devel
 %if %{without gstreamer}
 Obsoletes:	libvisual-plugin-actor-gstreamer < %{version}-%{release}
 %endif
 Obsoletes:	libvisual-plugin-actor-lv_dna < 0.4
 Obsoletes:	libvisual-plugin-actor-plazma < 0.4
-%if %{without esd}
-Obsoletes:	libvisual-plugin-input-esd < %{version}-%{release}
-%endif
+Obsoletes:	libvisual-plugin-input-esd < 0.4.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		abiver	0.4
@@ -258,6 +255,21 @@ Oinksie actor plugin for libvisual.
 %description -n libvisual-plugin-actor-oinksie -l pl.UTF-8
 Wtyczka aktora Oinksie dla libvisual.
 
+%package -n libvisual-plugin-input-debug
+Summary:	Debug input plugin for libvisual
+Summary(pl.UTF-8):	Diagnostyczna wtyczka wejściowa dla libvisual
+License:	LGPL v2.1+
+Group:		Libraries
+Requires:	%{name} = %{version}-%{release}
+
+%description -n libvisual-plugin-input-debug
+Debug input plugin for libvisual. It generates random PCM data for
+debugging purposes.
+
+%description -n libvisual-plugin-input-debug -l pl.UTF-8
+Diagnostyczna wtyczka wejściowa dla libvisual. Generuje losowe dane
+PCM.
+
 %package -n libvisual-plugin-input-alsa
 Summary:	ALSA input plugin for libvisual
 Summary(pl.UTF-8):	Wtyczka wejścia ALSA dla libvisual
@@ -271,27 +283,13 @@ ALSA input plugin for libvisual.
 %description -n libvisual-plugin-input-alsa -l pl.UTF-8
 Wtyczka wejściowa ALSA dla libvisual.
 
-%package -n libvisual-plugin-input-esd
-Summary:	ESD input plugin for libvisual
-Summary(pl.UTF-8):	Wtyczka wejściowa ESD dla libvisual
-License:	LGPL v2.1+
-Group:		Libraries
-Requires:	%{name} = %{version}-%{release}
-Requires:	esound-libs >= 0.2.28
-
-%description -n libvisual-plugin-input-esd
-ESD input plugin for libvisual.
-
-%description -n libvisual-plugin-input-esd -l pl.UTF-8
-Wtyczka wejściowa ESD dla libvisual.
-
 %package -n libvisual-plugin-input-jack
 Summary:	JACK input plugin for libvisual
 Summary(pl.UTF-8):	Wtyczka wejściowa JACK dla libvisual
 License:	LGPL v2.1+
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
-BuildRequires:	jack-audio-connection-kit-libs >= 0.98.0
+Requires:	jack-audio-connection-kit-libs >= 0.98.0
 
 %description -n libvisual-plugin-input-jack
 JACK input plugin for libvisual.
@@ -313,6 +311,32 @@ MPlayer input plugin for libvisual. It uses data exported from
 %description -n libvisual-plugin-input-mplayer -l pl.UTF-8
 Wtyczka wejściowa MPlayer dla libvisual. Wykorzystuje dane
 wyeksportowane z polecenia "mplayer -af export".
+
+%package -n libvisual-plugin-input-portaudio
+Summary:	PortAudio input plugin for libvisual
+Summary(pl.UTF-8):	Wtyczka wejściowa PortAudio dla libvisual
+License:	LGPL v2.1+
+Group:		Libraries
+Requires:	%{name} = %{version}-%{release}
+
+%description -n libvisual-plugin-input-portaudio
+PortAudio input plugin for libvisual.
+
+%description -n libvisual-plugin-input-portaudio -l pl.UTF-8
+Wtyczka wejściowa PortAudio dla libvisual.
+
+%package -n libvisual-plugin-input-pulseaudio
+Summary:	PulseAudio input plugin for libvisual
+Summary(pl.UTF-8):	Wtyczka wejściowa PulseAudio dla libvisual
+License:	LGPL v2.1+
+Group:		Libraries
+Requires:	%{name} = %{version}-%{release}
+
+%description -n libvisual-plugin-input-pulseaudio
+PulseAudio input plugin for libvisual.
+
+%description -n libvisual-plugin-input-pulseaudio -l pl.UTF-8
+Wtyczka wejściowa PulseAudio dla libvisual.
 
 %package -n libvisual-plugin-morph-alphablend
 Summary:	alphablend morph plugin for libvisual
@@ -388,7 +412,6 @@ fali.
 %{__autoheader}
 %{__automake}
 %configure \
-	%{!?with_esd:--disable-esd} \
 	%{!?with_gstreamer:--disable-gstreamer-plugin}
 
 %{__make}
@@ -441,6 +464,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc plugins/actor/G-Force/{AUTHORS,COPYING,NEWS,README,TODO,docs/G-Force.txt}
 %attr(755,root,root) %{_libdir}/libvisual-%{abiver}/actor/actor_gforce.so
+%{_datadir}/libvisual-plugins-%{abiver}/deffont
 %{_datadir}/libvisual-plugins-%{abiver}/actor/actor_gforce
 
 %if %{with gstreamer}
@@ -486,11 +510,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libvisual-%{abiver}/input/input_alsa.so
 
-%if %{with esd}
-%files -n libvisual-plugin-input-esd
+%files -n libvisual-plugin-input-debug
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libvisual-%{abiver}/input/input_esd.so
-%endif
+%attr(755,root,root) %{_libdir}/libvisual-%{abiver}/input/input_debug.so
 
 %files -n libvisual-plugin-input-jack
 %defattr(644,root,root,755)
@@ -499,6 +521,14 @@ rm -rf $RPM_BUILD_ROOT
 %files -n libvisual-plugin-input-mplayer
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libvisual-%{abiver}/input/input_mplayer.so
+
+%files -n libvisual-plugin-input-portaudio
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libvisual-%{abiver}/input/input_portaudio.so
+
+%files -n libvisual-plugin-input-pulseaudio
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libvisual-%{abiver}/input/input_pulseaudio.so
 
 %files -n libvisual-plugin-morph-alphablend
 %defattr(644,root,root,755)
